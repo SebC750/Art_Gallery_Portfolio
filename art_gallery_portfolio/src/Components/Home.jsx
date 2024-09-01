@@ -13,7 +13,7 @@ const Home = () => {
                     <img src="Artworks/bauhaus_saree.svg" className="d-block w-100" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork"/>
                     </div>
                     <div className="carousel-item">
-                        <img src="Artworks/b"
+                        <img src="Artworks/BelaBeach.jpg" className="d-block w-100" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork"/>
                     </div>
                 </div>
             </div>
