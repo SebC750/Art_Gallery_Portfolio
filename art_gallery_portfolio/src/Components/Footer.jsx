@@ -2,7 +2,7 @@ import "../Styles/Footer.css"
 const Footer = () => {
     return (
         <div>
-            <footer>
+            <footer id="Footer">
                 <div className="footer-message">
                     <h2> Like what you see? Check out more of my stuff at: </h2>
                 </div>

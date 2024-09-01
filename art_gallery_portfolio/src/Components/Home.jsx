@@ -1,7 +1,7 @@
 import "../Styles/Home.css"
-
+import Footer from "./Footer.jsx"
 const Home = () => {
-    const carouselImageDimensions = { width: 500, height: 1000 }
+    const carouselImageDimensions = { width: 600, height: 1000 }
     return (
         <div>
             <div className="container">
@@ -24,7 +24,8 @@ const Home = () => {
                                     </ul>
                                     <p> Feel free to look around if you'd like. I post new drawings occassionally when I'm not too busy or if i dont have access to a desktop/laptop.</p>
                                     <div className="redirect-to-contacts">
-                                        
+                                         <a href="#Gallery"> <button className="btn btn-outline-info btn-lg" style={{marginRight: 20}}> Go to the gallery </button></a>  
+                                         <a href="#Footer"> <button className="btn btn-outline-info btn-lg"> Social Media links </button></a>  
                                     </div>
                                 </div>
                             </div>
@@ -52,22 +53,23 @@ const Home = () => {
                                     <div className="carousel-item">
                                         <img src="Artworks/goth_cd_melinda.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
-                                    <button className="carousel-control-prev" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="prev">
-                                        <span className="carousel-control-prev-icon" aria-hideen="true"></span>
-                                        <span className="visually-hidden"> </span>
-                                    </button>
-                                    <button className="carousel-control-next" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="next">
-                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span className="visually-hideen"> </span>
-                                    </button>
-                                </div>
 
+                                </div>
+                                <button className="carousel-control-prev" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hideen="true"></span>
+                                    <span className="visually-hidden"> </span>
+                                </button>
+                                <button className="carousel-control-next" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="visually-hideen"> </span>
+                                </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
+            
 
 
         </div>

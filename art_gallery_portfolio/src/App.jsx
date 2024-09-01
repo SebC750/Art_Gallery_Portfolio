@@ -1,17 +1,26 @@
 import { useState } from 'react'
 import Home from './Components/Home.jsx'
-import Navbar from './Components/Navbar.jsx'
 import Gallery from './Components/Gallery.jsx'
-import Footer from './Components/Footer.jsx'
+import About from './Components/About.jsx'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+const routes = createBrowserRouter([{
+  path: "/",
+  element: <Home />
+}, {
+  path: "/Gallery",
+  element: <Gallery />
+}, {
+  path: "/About",
+  element: <About />
+}])
 function App() {
-  
+
 
   return (
     <>
-    <Navbar/>
-      <Home/>    
-      <Gallery/>
-      <Footer/>
+      <RouterProvider router={routes}/>
+
+      
     </>
   )
 }
