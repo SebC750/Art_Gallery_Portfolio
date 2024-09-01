@@ -1,8 +1,9 @@
 import '../Styles/Navbar.css'
-
+import {Link} from "react-router-dom"
 const Navbar = () => {
     return (
         <div>
+            
             <header>
                 <nav className="navbar">
 
@@ -11,9 +12,9 @@ const Navbar = () => {
                         DEEZDIJOU
                     </div>
                     <div className="navbar-items">
-                        <div className="btn btn-outline-info btn-lg"> <a href="#Home"> Home </a> </div>
-                        <div className="btn btn-outline-info btn-lg"> <a href="#Gallery"> Gallery</a> </div>
-                        <div className="btn btn-outline-info btn-lg"> <a href="#About"> About</a></div>
+                    <Link to="/"> <div className="btn btn-outline-info btn-lg">  Home  </div> </Link>
+                    <Link to="/Gallery"> <div className="btn btn-outline-info btn-lg"> Gallery </div></Link>
+                    <Link to="/About">  <div className="btn btn-outline-info btn-lg">  About</div></Link>
                     </div>
                 </nav>
             </header>

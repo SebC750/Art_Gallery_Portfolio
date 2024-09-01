@@ -1,9 +1,12 @@
 import "../Styles/Home.css"
-import Footer from "./Footer.jsx"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
+import {Link} from "react-router-dom"
 const Home = () => {
     const carouselImageDimensions = { width: 600, height: 1000 }
     return (
         <div>
+            <Navbar/>
             <div className="container">
 
                 <div className="intro-container-bg">
@@ -24,7 +27,7 @@ const Home = () => {
                                     </ul>
                                     <p> Feel free to look around if you'd like. I post new drawings occassionally when I'm not too busy or if i dont have access to a desktop/laptop.</p>
                                     <div className="redirect-to-contacts">
-                                         <a href="#Gallery"> <button className="btn btn-outline-info btn-lg" style={{marginRight: 20}}> Go to the gallery </button></a>  
+                                         <Link to="/Gallery"> <button className="btn btn-outline-info btn-lg" style={{marginRight: 20}}> Go to the gallery </button></Link>  
                                          <a href="#Footer"> <button className="btn btn-outline-info btn-lg"> Social Media links </button></a>  
                                     </div>
                                 </div>
@@ -70,7 +73,7 @@ const Home = () => {
                 </div>
             </div>
             
-
+         <Footer/>
 
         </div>
     )

@@ -1,3 +1,13 @@
 .art-gallery-properties{
     color: rgb(41, 207, 207);
+    display: flex;
+    flex-direction: column;
+    
+}
+.art-gallery-properties h2 h4{
+    color: rgb(41, 207, 207);
+}
+.art-gallery-properties img{
+    cursor: pointer;
+    transition: all
 }

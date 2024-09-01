@@ -25,3 +25,16 @@
     color: rgb(41, 207, 207);
     text-align: center;
 }
+.footer{
+    margin-top: 50px;
+}
+.footer-bg{
+    background-color: black;
+}
+.border{
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(41, 207, 207);
+    border-width: 3px;
+    
+}
