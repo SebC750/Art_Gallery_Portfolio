@@ -1,0 +1,18 @@
+.navbar-logo{
+    color: white;
+    font-size: 36px;
+    margin-left: 20px;
+}
+.navbar{
+    background-color: rgb(23, 23, 28);
+    display: flex;
+    align-items: center;
+}
+.navbar-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-items div{
+    margin-right: 20px;
+} 
