@@ -22,16 +22,10 @@
     
 }
 .intro-title{
-    margin-top: 180px;
+    margin-top: 130px;
     
 }
-#carousel-buttons{
-    width: 50px;
-    height: 80px;
-    margin-top: 500px;
-    background-color: rgb(41, 207, 207);
-  
-}
+
 .intro-content div{
     color: rgb(41, 207, 207);
 }

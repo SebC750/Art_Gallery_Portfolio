@@ -1,5 +1,5 @@
 
-function selectionSort(list, filterType){
+function quickSort(list, filterType){
       
 }
 export function sortByFileSize(list){

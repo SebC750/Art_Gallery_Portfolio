@@ -28,7 +28,7 @@ const Home = () => {
                                     <p> Feel free to look around if you'd like. I post new drawings occassionally when I'm not too busy or if i dont have access to a desktop/laptop.</p>
                                     <div className="redirect-to-contacts">
                                          <Link to="/Gallery"> <button className="btn btn-outline-info btn-lg" style={{marginRight: 20}}> Go to the gallery </button></Link>  
-                                         <a href="#Footer"> <button className="btn btn-outline-info btn-lg"> Social Media links </button></a>  
+                                         <Link to="/About"> <button className="btn btn-outline-info btn-lg"> More about me </button></Link>  
                                     </div>
                                 </div>
                             </div>
@@ -38,23 +38,21 @@ const Home = () => {
                         <div className="col">
                             <div id="intro-carousel" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-inner">
-                                    <div className="carousel-item active" >
-                                        <img src="Artworks/clueless.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
-                                    </div>
-                                    <div className="carousel-item ">
-                                        <img src="Artworks/bauhaus_saree.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    
+                                    <div className="carousel-item active">
+                                        <img src="Artworks/bauhaus_saree.svg" className="img-thumbnail" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
                                     <div className="carousel-item">
-                                        <img src="Artworks/fallout_4_natalia.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                        <img src="Artworks/fallout_4_natalia.svg" className="img-thumbnail" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
                                     <div className="carousel-item">
-                                        <img src="Artworks/serena_mtv_downtown.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                        <img src="Artworks/serena_mtv_downtown.svg" className="img-thumbnail" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
                                     <div className="carousel-item">
-                                        <img src="Artworks/vision_video_goth.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                        <img src="Artworks/vision_video_goth.svg" className="img-thumbnail" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
                                     <div className="carousel-item">
-                                        <img src="Artworks/goth_cd_melinda.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                        <img src="Artworks/goth_cd_melinda.svg" className="img-thumbnail" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
                                     </div>
 
                                 </div>
