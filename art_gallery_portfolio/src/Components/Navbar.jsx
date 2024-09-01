@@ -1,12 +1,16 @@
-import '../Styles/Home.css'
+import '../Styles/Navbar.css'
+
 const Navbar = () => {
     return (
         <div>
             <header>
                 <nav className="navbar">
+
                     <div className="navbar-logo">
-                          <img src="d-initial-logo.svg" height="80" width="80" alt="website-logo"/>
-                          eedijou
+                        <div className="navbar-logo-bg">
+
+                        </div>
+                        DEEZDIJOU
                     </div>
                     <div className="navbar-items">
                         <div className="btn btn-outline-success btn-lg"> <a href="#Home"> Home </a> </div>
@@ -15,7 +19,7 @@ const Navbar = () => {
                     </div>
                 </nav>
             </header>
-           
+
         </div>
     )
 }

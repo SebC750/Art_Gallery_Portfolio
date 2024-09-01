@@ -1,0 +1,27 @@
+.social-media-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.social-media-logo{
+    
+    width: 100px;
+    height: 100px;
+    
+    transition: all 0.3s ease;
+}
+.logo-anchors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}
+.social-media-logo:hover{
+    width: 90px;
+    height: 90px;
+}
+.footer-message{
+    color: rgb(41, 207, 207);
+    text-align: center;
+}

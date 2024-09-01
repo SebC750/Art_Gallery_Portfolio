@@ -1,31 +1,75 @@
+import "../Styles/Home.css"
 
 const Home = () => {
-    const carouselImageDimensions = {width:1000,height:1500}
+    const carouselImageDimensions = { width: 500, height: 1000 }
     return (
         <div>
-            <h1> The complete art collection</h1>
-            <div id="intro-carousel" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="Artworks/clueless.svg" className="d-block w-100" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork"/>
-                    </div>
-                    <div className="carousel-item ">
-                    <img src="Artworks/bauhaus_saree.svg" className="d-block w-100" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork"/>
-                    </div>
-                    <div className="carousel-item">
-                        <img src="Artworks/BelaBeach.jpg" className="d-block w-100" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork"/>
+            <div className="container">
+
+                <div className="intro-container-bg">
+                    <div className="row">
+                        <div className="col">
+                            <div className="intro-content">
+                                <div className="intro-title">
+                                    <h2> Hi! I'm DeezDijou.</h2>
+                                </div>
+                                <div className="intro-description">
+                                    <p> And this is my art gallery. Here, you will find the complete collection of my best artworks. </p>
+                                    <p> Within this compendium of art, you will find things such as: </p>
+                                    <ul>
+                                        <li> Single panel artpieces.</li>
+                                        <li> Comics</li>
+                                        <li> Animated Gifs</li>
+
+                                    </ul>
+                                    <p> Feel free to look around if you'd like. I post new drawings occassionally when I'm not too busy or if i dont have access to a desktop/laptop.</p>
+                                    <div className="redirect-to-contacts">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div className="col">
+                            <div id="intro-carousel" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner">
+                                    <div className="carousel-item active" >
+                                        <img src="Artworks/clueless.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <div className="carousel-item ">
+                                        <img src="Artworks/bauhaus_saree.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img src="Artworks/fallout_4_natalia.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img src="Artworks/serena_mtv_downtown.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img src="Artworks/vision_video_goth.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img src="Artworks/goth_cd_melinda.svg" className="carousel-img" height={carouselImageDimensions.height} width={carouselImageDimensions.width} alt="this is an artwork" />
+                                    </div>
+                                    <button className="carousel-control-prev" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="prev">
+                                        <span className="carousel-control-prev-icon" aria-hideen="true"></span>
+                                        <span className="visually-hidden"> </span>
+                                    </button>
+                                    <button className="carousel-control-next" id="carousel-buttons" type="button" data-bs-target="#intro-carousel" data-bs-slide="next">
+                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span className="visually-hideen"> </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#intro-carousel" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hideen="true"></span>
-                <span className="visually-hidden"> Previous </span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#intro-carousel" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hideen"> Next</span>
-            </button>
-            
+
+
+
         </div>
     )
 }

@@ -16,3 +16,22 @@
 .navbar-items div{
     margin-right: 20px;
 } 
+
+.intro-container-bg{
+    padding: 20px;
+    
+}
+.intro-title{
+    margin-top: 180px;
+    
+}
+#carousel-buttons{
+    width: 50px;
+    height: 80px;
+    margin-top: 90%;
+    background-color: rgb(41, 207, 207);
+    opacity: 30%;
+}
+.intro-content div{
+    color: rgb(41, 207, 207);
+}
