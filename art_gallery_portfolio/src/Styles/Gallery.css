@@ -34,3 +34,6 @@
     border-color: rgb(41, 207, 207);
     margin-bottom: 20px;
 }
+.dropdown-item{
+    cursor: pointer;
+}

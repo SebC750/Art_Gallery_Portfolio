@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import "../Styles/Gallery.css"
 import Navbar from "./Navbar.jsx"
 import Footer from "./Footer.jsx"
+import {sortByTitle, sortByYear} from "./SortByFilter.js"
 const Gallery = () => {
     const [allArtworks, getAllArtworks] = useState(artworks)
     const [isArtworkSelected, setIsArtworkSelected] = useState(false)
@@ -14,7 +15,18 @@ const Gallery = () => {
         setIsArtworkSelected(false)
         getAllArtworks(artworks)
     }
-
+    const sortByFilter = (filterType) =>{
+        if(filterType === "title"){
+            const sortedArray = sortByTitle(allArtworks, filterType)
+            getAllArtworks(sortedArray)
+        }
+        else if(filterType === "year"){
+            const sortedArray = sortByYear(allArtworks,filterType)
+            getAllArtworks(sortedArray)
+            return getAllArtworks(sortedArray)
+        }
+        
+    }
     return (
         <div>
             <Navbar />
@@ -24,6 +36,22 @@ const Gallery = () => {
                     <div className="gallery-title">
                         Galleria 
                     </div>
+                    <div className="dropdown">
+                        <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Filter by</button>
+                        <div className="dropdown-menu">
+                            <ul>
+                                <div className="dropdown-item" onClick={() => sortByFilter("title")}>
+                                    Title
+                                </div>
+                                <div className="dropdown-item" onClick={() => sortByFilter("year")}>
+                                    Year Completed
+                                </div>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    
                     {allArtworks ? (
                         <div className="row row-cols-3">
                             {allArtworks.map((val, index) => (
