@@ -18,9 +18,22 @@ html,body{
   background-color: #242424 !important;
 }
 h1{
-  color: white;
+  color: rgb(41, 207, 207);
 }
 a{
   text-decoration: none;
   color: white;
+}
+.btn-bd-info{
+  --bs-btn-color: rgb(41, 207, 207);
+}
+.accordion{
+  margin-bottom: 20px;
+  --bs-accordion-color: rgb(41, 207, 207);
+  --bs-accordion-btn-color: rgb(41, 207, 207);
+  --bs-accordion-bg: #151515;
+  --bs-accordion-btn-bg: #151515;
+  --bs-accordion-active-bg: #151515;
+  --bs-accordion-active-color: rgb(41, 207, 207);
+  --bs-accordion-border-color: rgb(41, 207, 207);
 }
