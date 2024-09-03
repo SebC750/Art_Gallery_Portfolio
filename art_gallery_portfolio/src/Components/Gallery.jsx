@@ -8,14 +8,38 @@ const Gallery = () => {
     const [allArtworks, getAllArtworks] = useState(artworks)
     const [isArtworkSelected, setIsArtworkSelected] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null)
+
+    const handleImgDownloadAttempt = (e) => {
+        e.preventDefault()
+    }
+    const handleDragAttempt = (e) => {
+        e.preventDefault();
+    };
     const showSelectedArtwork = (file, title, date, description) => {
-        setIsArtworkSelected(true)
-        console.log("File: " + file, "Date" + date, "Title: " + title)
-        getAllArtworks({ file: file, title: title, date: date, description: description })
+        setErrorMessage(null)
+        try{
+            setIsArtworkSelected(true)
+            
+            getAllArtworks({ file: file, title: title, date: date, description: description })
+        }catch(e){
+            console.error(e)
+            
+            setErrorMessage("Sorry. The selected artwork cannot be displayed at the moment.")
+        }
+        
     }
     const backToGallery = () => {
-        setIsArtworkSelected(false)
-        getAllArtworks(artworks)
+        setErrorMessage(null)
+        try{
+            setIsArtworkSelected(false)
+            getAllArtworks(artworks)
+        }catch(e){
+            console.error(e)
+            
+            setErrorMessage("Cannot redirect back to gallery.")
+        }
+        
+
     }
     const sortByFilter = (filterType) => {
         if (filterType === "title") {
@@ -24,7 +48,7 @@ const Gallery = () => {
                 const sortedArray = sortByTitle([...allArtworks])
                 console.log(sortedArray)
                 if (!sortedArray) {
-                    console.log("Could not get results.")
+                    
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
                     return null
                 }
@@ -35,7 +59,7 @@ const Gallery = () => {
 
             } catch (e) {
                 console.error(e)
-                console.log("Sorry, there are no artworks to sort.")
+                
                 setErrorMessage("Oops, could not sort the artworks! Sorry!")
                 getAllArtworks(allArtworks)
             }
@@ -47,7 +71,7 @@ const Gallery = () => {
                 const sortedArray = sortByDate([...allArtworks])
                 console.log(sortedArray)
                 if (!sortedArray) {
-                    console.log("Could not get results.")
+                    
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
                     return null
                 }
@@ -58,7 +82,7 @@ const Gallery = () => {
 
             } catch (e) {
                 console.error(e)
-                console.log("Sorry, there are no artworks to sort.")
+                
                 setErrorMessage("Oops, could not sort the artworks! Sorry!")
                 getAllArtworks(allArtworks)
             }
@@ -75,45 +99,79 @@ const Gallery = () => {
                         Galleria
                     </div>
 
-                    <div className="dropdown">
-                        <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Sort by</button>
-                        <div className="dropdown-menu">
-                            <ul>
-                                <div className="dropdown-item" onClick={() => sortByFilter("title")}>
-                                    Title
-                                </div>
-                                <div className="dropdown-item" onClick={() => sortByFilter("year")}>
-                                    Year Completed
-                                </div>
-                            </ul>
 
-                        </div>
-
-                    </div>
-                    <div className="error-message"> {errorMessage} </div>
+                    {errorMessage ? <div className="error-message"> {errorMessage} </div> : null}
                     {!isArtworkSelected ? (
-                        allArtworks ? (
+                        <div>
+                            <div className="dropdown">
+                                <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Sort by</button>
+                                <div className="dropdown-menu">
+                                    <ul>
+                                        <div className="dropdown-item" onClick={() => sortByFilter("title")}>
+                                            Title
+                                        </div>
+                                        <div className="dropdown-item" onClick={() => sortByFilter("year")}>
+                                            Year Completed
+                                        </div>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            allArtworks && !errorMessage ? (
                             <div className="row row-cols-3">
                                 {allArtworks.map((val, index) => (
                                     <div key={index} className="art-gallery-properties">
-                                        <img
-                                            src={val.file}
-                                            className="d-block"
-                                            alt="this is a piece of art"
+                                        <div
+                                            style={{
+                                                backgroundImage: `url(${val.file})`,
+                                                backgroundSize: 'cover',
+                                                backgroundPosition: 'center',
+                                                width: '100%',
+                                                height: '400px'
+                                            }}
+                                            {...console.log(val.file)}
+                                            onContextMenu={handleImgDownloadAttempt}
+                                            onDragStart={handleDragAttempt}
+
+                                            className="d-block w-100 img-thumbnail"
                                             onClick={() => showSelectedArtwork(val.file, val.title, val.date, val.description)}
                                         />
                                         <h2 className="img-title"> {val.title}</h2>
-                                        <p>Date completed: {val.year}</p>
+                                        <p>Date completed: {val.date}</p>
                                     </div>
                                 ))}
                             </div>
-                        ) : (
-                            <div className="missing-art-message">Nothing to show here.</div>
-                        )
-                    ) : (
-                        <div>
-                            <div style={{color: "white"}}> {allArtworks.file} </div>
-                            
+                            ) : null
+                        </div>) : (
+                        <div className="selected-artwork-container">
+                            <div className="row">
+                                <div className="col">
+                                    <img
+                                        src={allArtworks.file}
+                                        onContextMenu={handleImgDownloadAttempt}
+                                        onDragStart={handleDragAttempt}
+                                        alt="This is the selected artwork."
+                                        className="d-block w-100 img-thumbnail"
+                                    />
+                                </div>
+                                <div className="col d-flex flex-column">
+                                    <div className="selected-artwork-description flex-grow-1">
+                                        <span>{allArtworks.title}</span>
+                                        <p>Date completed: {allArtworks.date}</p>
+                                        <div className="description-container flex-grow-1 d-flex flex-column justify-content-between">
+                                            <div className="description-title">
+                                                <p>Description</p>
+                                            </div>
+                                            <div className="description-content">
+                                                {allArtworks.description}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" className="btn btn-outline-info btn-lg w-100 mt-auto" onClick={() => backToGallery()}> Back to Gallery</button>
+                                </div>
+
+                            </div>
                         </div>
                     )}
 

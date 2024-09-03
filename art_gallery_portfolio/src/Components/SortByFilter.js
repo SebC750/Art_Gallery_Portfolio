@@ -75,6 +75,6 @@ function compareByTitle(titleA,titleB){
     return titleA.title.localeCompare(titleB.title)
 }
 function compareByDate(dateA,dateB){
-    return new Date(dateA.date) - new Date(dateB.date);
+    return new Date(dateB.date) - new Date(dateA.date);
 }
 
