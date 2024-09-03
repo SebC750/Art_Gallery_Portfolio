@@ -7,7 +7,7 @@ const About = () => {
             <Navbar />
              
             <div className="container" >
-                <div className="about-title"> About </div>
+                <div className="about-title" id="top-of-about"> About </div>
                 <div class="accordion" id="about-accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -53,6 +53,7 @@ I start
                     </div>
                    
                 </div>
+                <a href="#top-of-about"> <button type="button" className="btn btn-outline-info w-100" style={{marginBottom: 20}}> Back to top</button>  </a>
             </div>
 
 

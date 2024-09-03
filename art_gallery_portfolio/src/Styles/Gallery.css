@@ -37,3 +37,11 @@
 .dropdown-item{
     cursor: pointer;
 }
+.error-message{
+    font-size: 32px;
+    color: rgb(224, 88, 133);
+}
+.missing-art-message{
+    font-size: 32px;
+    color: rgb(224, 88, 133);
+}
