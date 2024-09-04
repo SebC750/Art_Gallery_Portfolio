@@ -28,15 +28,16 @@
     margin-right: 20px;
 } 
 @media(max-width: 720px){
-    
+    .navbar-items{
+       
+    }
     .navbar-items div{
         width: 100%;
-        padding-left: 33px;
-        padding-right: 35px;
+        margin-left: 35px;
     }
     .btn{
         width: 100%;
-        --bs-btn-font-size: 24px;
+        --bs-btn-font-size: 16px;
 
         
     }
