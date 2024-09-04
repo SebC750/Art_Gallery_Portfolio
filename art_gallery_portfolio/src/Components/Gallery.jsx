@@ -141,7 +141,7 @@ const Gallery = () => {
                             </div>
                             {/*If no artworks in particular are selected by the user, we must first check if there are any artworks to show at all. */}
                             allArtworks && !errorMessage ? (
-                            <div className="row row-cols-3">
+                            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
                                 {allArtworks.map((val, index) => (
                                     <div key={index} className="art-gallery-properties">
                                          {/* If a user clicks on the image, show the artwork by passing the data into the function*/}

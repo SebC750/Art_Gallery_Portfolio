@@ -14,7 +14,7 @@ const Home = () => {
 
                 <div className="intro-container-bg">
                     <div className="row">
-                        <div className="col">
+                    <div className="col-lg-6 col-12">
                             <div className="intro-content">
                                 <div className="intro-title">
                                     <h2> Hi! My name is Sebastian Chalarca ! (Also known as DeezDijou!)</h2>
@@ -38,7 +38,7 @@ const Home = () => {
 
 
                         </div>
-                        <div className="col">
+                        <div className="col-lg-6 col-12">
                             <div id="intro-carousel" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-inner">
                                     

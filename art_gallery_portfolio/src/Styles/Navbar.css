@@ -28,7 +28,22 @@
     margin-right: 20px;
 } 
 @media(max-width: 720px){
+    
+    .navbar-items div{
+        width: 100%;
+        padding-left: 33px;
+        padding-right: 35px;
+    }
     .btn{
-        --bs-btn-font-size: 10px;
+        width: 100%;
+        --bs-btn-font-size: 24px;
+
+        
+    }
+    .navbar-logo{
+        text-align: center;
+        width: 92%;
+        font-size: 36px;
+        margin-bottom: 10px;
     }
 }
