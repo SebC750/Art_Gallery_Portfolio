@@ -18,7 +18,7 @@ const About = () => {
                             </button>
                         </h2>
                         <div id="question1" class="accordion-collapse collapse" data-bs-parent="#about-accordion">
-                            <div class="accordion-body"> My name is DeezDijou. I am an a software developer/web developer by day and cartoonist/animator by night. When I'm not too busy, I draw stuff (A lot of Goth stuff in particular) but I can do anything.</div>
+                            <div class="accordion-body"> My name is Sebastian Chalarca (Also known as DeezDijou on the internet). I am an a software developer/web developer by day and cartoonist/animator by night. When I'm not too busy, I draw stuff (A lot of Goth stuff in particular) but I can do anything. I love to code, draw and play video games!</div>
 
                         </div>
                     </div>
@@ -115,6 +115,19 @@ const About = () => {
                                This art gallery right now is fairly simple but I will be updating this website when possible (after working on projects or getting off of work.).
                                Stay tuned for more!
                                </div>
+
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question8" aria-expanded="false" aria-controls="question8">
+                                What software do you use for your art?
+                            </button>
+                        </h2>
+                        <div id="question8" class="accordion-collapse collapse" data-bs-parent="#about-accordion">
+                            <div class="accordion-body">
+                                I use an old app called Sony Sketch. Several of these works were made with Autodesk Sketchbook but the vast majority of my work is done on my phone in Sony Sketch. The app is no longer available on the Google play/App store unfortunately. 
+                            </div>
 
                         </div>
                     </div>

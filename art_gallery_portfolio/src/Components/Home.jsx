@@ -14,7 +14,7 @@ const Home = () => {
                         <div className="col">
                             <div className="intro-content">
                                 <div className="intro-title">
-                                    <h2> Hi! I'm DeezDijou.</h2>
+                                    <h2> Hi! My name is Sebastian Chalarca ! (Also known as DeezDijou!)</h2>
                                 </div>
                                 <div className="intro-description">
                                     <p> And this is my art gallery. Here, you will find the complete collection of my best artworks. </p>

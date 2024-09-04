@@ -9,7 +9,7 @@ const Navbar = () => {
 
                     <div className="navbar-logo">
                         
-                        DEEZDIJOU
+                        SEBASTIAN CHALARCA
                     </div>
                     <div className="navbar-items">
                     <Link to="/"> <div className="btn btn-outline-info btn-lg">  Home  </div> </Link>
