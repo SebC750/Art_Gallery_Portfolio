@@ -28,6 +28,7 @@ a{
 }
 /* Changing bootstrap sass variables to conform with the aesthetic theme of the website.*/
 .btn{
+  --bs-btn-font-size: 24px;
   --bs-btn-bg: transparent;
   --bs-btn-color: rgb(41, 207, 207);
   --bs-btn-border-color: rgb(41, 207, 207);
