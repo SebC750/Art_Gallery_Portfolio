@@ -39,3 +39,23 @@
     border-width: 3px;
     
 }
+@media(max-width: 720px){
+    .social-media-links{
+        flex-direction: column;
+        margin-left: 40px;
+    }
+    .social-media-logo{
+        width: 180px;
+        height: 180px;
+    }
+    .social-media-logo:hover{
+        width: 160px;
+        height: 160px;
+    }
+    .logo-anchors p{
+        font-size: 12px;
+    }
+    .footer{
+        height: 100vh;
+    }
+}
