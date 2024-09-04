@@ -1,4 +1,3 @@
-
 [
     {
         "file": "Artworks/BandicootEvil.jpg",
@@ -142,7 +141,7 @@
         "file": "Artworks/samurai_jack_fallout.jpg",
         "title": "Samurai Jack Fallout 1",
         "date": "2020-10-03",
-        "description": "Long ago in the mojave wasteland....I, Aku the shape-shifting radioactive master of darkness, unleashed an UNSPEAKABLE EVIL! But a foolish vault dweller, wielding a magic 10mm pistol, steps forth to oppose. Before the final blow was struck, I tore open a portal in time and plunged him into the future, where my evil is law. Now the fool seeks to return and undo the future that is the unity."
+        "description": "'Long ago in the mojave wasteland....I, Aku the shape-shifting radioactive master of darkness, unleashed an UNSPEAKABLE EVIL! But a foolish vault dweller, wielding a magic 10mm pistol, steps forth to oppose. Before the final blow was struck, I tore open a portal in time and plunged him into the future, where my evil is law. Now the fool seeks to return and undo the future that is the unity.'"
     },
     {
         "file": "Artworks/serena_mtv_downtown.svg",
@@ -179,6 +178,95 @@
         "title": "Susanne finds a spider",
         "date": "2017-05-26",
         "description": "She really loves her spiders. She has a whole collection of them!"
+    },
+    {
+        "file": "Artworks/Popcorn_chicken.jpg",
+        "title": "Popcorn chicken",
+        "date": "2021-07-25",
+        "description": "As a kid, I used to love these little things like you wouldn't believe. Now I want some again lol."
+    },
+    {
+        "file": "Artworks/princess_peach.png",
+        "title": "Princess peach wishes you a happy birthday",
+        "date": "2017-02-03",
+        "description": "Self explanatory."
+    },
+    {
+        "file": "Artworks/SU_CD.jpg",
+        "title": "Pearl is concerned.",
+        "date": "2020-06-20",
+        "description": "No, it certainly doesn't sound like it."
+    },
+    {
+        "file": "Artworks/elora_goth.png",
+        "title": "I'm a __ you dork!",
+        "date": "2018-09-17",
+        "description": "You tell'em!"
+    },
+    {
+        "file": "Artworks/EEnE_Kevin_pushups.jpg",
+        "title": "Kevin pushups",
+        "date": "2021-08-12",
+        "description": "The show that is responsible for all of this art existing in the first place. Thank you Danny Antonucci."
+    },
+    {
+        "file": "Artworks/CHR10.jpg",
+        "title": "Charisma 6+ Vault Dweller",
+        "date": "2022-01-04",
+        "description": "'D'oh!, Go away quick or Harry be in trouble!'"
+    },
+    {
+        "file": "Artworks/80s_Ankha.jpg",
+        "title": "80s Ankha",
+        "date": "2021-12-09",
+        "description": "'Get up! Stand tall! Put your back up against the wall! Cause our love is dangerous!'"
+    },
+    {
+        "file": "Artworks/bat_girl.jpg",
+        "title": "In his dreams.",
+        "date": "2021-08-16",
+        "description": "Its always either frat boys, nerdy e-sports gamer gurus or business majors."
+    },
+    {
+        "file": "Artworks/courage_and_bunny.jpg",
+        "title": "My favorite CCD episode",
+        "date": "2020-07-01",
+        "description": "As as kid, I enjoyed Courage the Cowardly Dog a lot because of its omminous atmosphere and unique approach to cartoon horror by using different animation media. This episode was dark in a way that was different from the other episodes. For me, its because of how real the themes are in this episode. Seeing stuff like same-sex relationships (implied but still), sexual assault and human trafficking in a cartoon network show is crazy stuff but nevertheless, I loved the episode so much for how these themes were tackled by J. R. Dilworth in a way that was impactful but also subtle."
+    },
+    {
+        "file": "Artworks/random_vault_dweller.jpg",
+        "title": "Random Vault Dweller",
+        "date": "2022-01-06",
+        "description": "Self-explanatory"
+    },
+    {
+        "file": "Artworks/Deathhawk.jpg",
+        "title": "Deathhawk",
+        "date": "12-11-2021",
+        "description": "Deathhawk"
+    },
+    {
+        "file": "Artworks/Isabelle_Amp.jpg",
+        "title": "Isabelle's broken amp",
+        "date": "2021-07-22",
+        "description": "That'll teach you to buy your amps from Ebay of all places."
+    },
+    {
+        "file": "Artworks/viking_girl.png",
+        "title": "Raging Viking Girl",
+        "date": "2020-07-01",
+        "description": "Rrrraaagh!"
+    },
+    {
+        "file": "Artworks/Cat_hair.jpg",
+        "title": "Cat hair",
+        "date": "2019-10-06",
+        "description": "I drew this before I had a cat and now it "
+    },
+    {
+        "file": "Artworks/gru_time.png",
+        "title": "You're gonna have a gru time.",
+        "date": "2020-07-01",
+        "description": "Please forgive me for this...."
     }
-   
 ]
