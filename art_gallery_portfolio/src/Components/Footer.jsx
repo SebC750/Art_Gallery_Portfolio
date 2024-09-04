@@ -1,5 +1,6 @@
 import "../Styles/Footer.css"
 const Footer = () => {
+    //This is the footer. It includes links to my social media accounts for users to look further into my work.
     return (
         <div className="footer-bg">
             <footer >

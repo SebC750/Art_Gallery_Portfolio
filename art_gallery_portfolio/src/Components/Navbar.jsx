@@ -1,5 +1,6 @@
 import '../Styles/Navbar.css'
 import {Link} from "react-router-dom"
+//This is the navbar. The navbar provides a simple but sleek navigational tool. Each button takes you to the home, gallery or about page.
 const Navbar = () => {
     return (
         <div>

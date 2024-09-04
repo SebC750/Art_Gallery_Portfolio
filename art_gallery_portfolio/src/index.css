@@ -12,9 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Added universal modifications to html elements that is universally applicable to the rest of the project. */
 html,body{
   margin:0;
   padding:0;
+  /* The !important tag overrides bootstrap's default background colors.*/
   background-color: #242424 !important;
 }
 h1{
@@ -24,6 +26,7 @@ a{
   text-decoration: none;
   color: white;
 }
+/* Changing bootstrap sass variables to conform with the aesthetic theme of the website.*/
 .btn{
   --bs-btn-bg: transparent;
   --bs-btn-color: rgb(41, 207, 207);
