@@ -47,7 +47,7 @@ const About = () => {
                         </h2>
                         <div id="question3" class="accordion-collapse collapse" data-bs-parent="#about-accordion">
                             <div class="accordion-body"> Since middle school. Started when i first drew my best friend at the time as a south park character on my notebook. Then, I asked my mom soon after if I could get a sketchbook and thats where i really began to draw a lot. I would draw mario bros characters and mortal kombat stuff.
-                                Around the beginning of 8th grade, I realized if i tried hard enough (and used rulers properly), i could get into an art school. In the middle of that year when we had to search for high schools, I was reading a book of public schools and I came across Art and Design High School of Manhattan. Seemed pretty cool so I haphazardly put together a portfolio and by the grace of [insert god here], I somehow got in. I majored in Animation and gradually refined my craft (still bad but not as bad as it used to be.).
+                                Around the beginning of 8th grade, I realized if i tried hard enough (and used rulers properly), i could get into an art school. In the middle of that year when we had to search for high schools, I was reading a book of public schools and I came across Art and Design High School of Manhattan. Seemed pretty cool so I haphazardly put together a portfolio and thankfully, I somehow got in. I majored in Animation and gradually refined my craft (still bad but not as bad as it used to be.).
 
                             </div>
 
