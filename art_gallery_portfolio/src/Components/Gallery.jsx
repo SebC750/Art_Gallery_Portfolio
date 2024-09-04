@@ -17,28 +17,28 @@ const Gallery = () => {
     };
     const showSelectedArtwork = (file, title, date, description) => {
         setErrorMessage(null)
-        try{
+        try {
             setIsArtworkSelected(true)
-            
+
             getAllArtworks({ file: file, title: title, date: date, description: description })
-        }catch(e){
+        } catch (e) {
             console.error(e)
-            
+
             setErrorMessage("Sorry. The selected artwork cannot be displayed at the moment.")
         }
-        
+
     }
     const backToGallery = () => {
         setErrorMessage(null)
-        try{
+        try {
             setIsArtworkSelected(false)
             getAllArtworks(artworks)
-        }catch(e){
+        } catch (e) {
             console.error(e)
-            
+
             setErrorMessage("Cannot redirect back to gallery.")
         }
-        
+
 
     }
     const sortByFilter = (filterType) => {
@@ -48,7 +48,7 @@ const Gallery = () => {
                 const sortedArray = sortByTitle([...allArtworks])
                 console.log(sortedArray)
                 if (!sortedArray) {
-                    
+
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
                     return null
                 }
@@ -59,7 +59,7 @@ const Gallery = () => {
 
             } catch (e) {
                 console.error(e)
-                
+
                 setErrorMessage("Oops, could not sort the artworks! Sorry!")
                 getAllArtworks(allArtworks)
             }
@@ -71,7 +71,7 @@ const Gallery = () => {
                 const sortedArray = sortByDate([...allArtworks])
                 console.log(sortedArray)
                 if (!sortedArray) {
-                    
+
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
                     return null
                 }
@@ -82,7 +82,7 @@ const Gallery = () => {
 
             } catch (e) {
                 console.error(e)
-                
+
                 setErrorMessage("Oops, could not sort the artworks! Sorry!")
                 getAllArtworks(allArtworks)
             }
@@ -130,7 +130,7 @@ const Gallery = () => {
                                                 width: '100%',
                                                 height: '400px'
                                             }}
-                                            {...console.log(val.file)}
+
                                             onContextMenu={handleImgDownloadAttempt}
                                             onDragStart={handleDragAttempt}
 
@@ -159,7 +159,7 @@ const Gallery = () => {
                                     <div className="selected-artwork-description flex-grow-1">
                                         <span>{allArtworks.title}</span>
                                         <p>Date completed: {allArtworks.date}</p>
-                                        <div className="description-container flex-grow-1 d-flex flex-column justify-content-between">
+                                        <div className="description-container flex-grow-1 d-flex flex-column justify-content-start">
                                             <div className="description-title">
                                                 <p>Description</p>
                                             </div>

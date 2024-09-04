@@ -23,7 +23,7 @@ const Home = () => {
                                         <li> Single panel artpieces.</li>
                                         <li> Comics</li>
                                         <li> Animated Gifs</li>
-
+                                        <li> Sketches </li>
                                     </ul>
                                     <p> Feel free to look around! I post new drawings occassionally when I'm not too busy or if i dont have access to a desktop/laptop. My full collection is right here but i am also elsewhere.</p>
                                     <div className="redirect-to-contacts">
