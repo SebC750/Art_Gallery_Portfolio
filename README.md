@@ -28,7 +28,8 @@ Here are my future plans for the art gallery!
 - UI and function improvements.
 
 Looking forward to seeing you all at the website! Come take a look! Hope you like what I have to show!
-Website is now live at:[Art Gallery Website Link](https://vercel.com/sebc750s-projects/art-gallery-portfolio)
+Website is now live at: [https://vercel.com/sebc750s-projects/art-gallery-portfolio](https://art-gallery-portfolio-git-main-sebc750s-projects.vercel.app/)
+
 
 ## Tech Stack
 - HTML
