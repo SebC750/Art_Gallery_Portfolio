@@ -18,8 +18,12 @@ I am happy to announce that I have completed the first version of the art galler
 - Used Bootstrap and react-router-dom to enhance styling and site navigation respectively.
 - Added links to my other social media (instagram, reddit and deviantart) for people to look deeper into my work and follow me there! However, i intend for this website to be a central hub for my art to be in so all future artworks will be served here first.
 
+## Development progress (as of 09/12/2024)
+- Initialized backend folder with a database.py file where I create a database class that holds credentials to access the db. Connection test was successful.
+- Initialized the commissions page where I show my prices for each type of artwork (sketch, lineart, color). 
 ## Future plans!
 Here are my future plans for the art gallery!
+- Finish writing routes and create API.js file to communicate with backend.
 - Admin Dashboard to add in artpieces easily (Will need backend for this, also manually adding data to json files is going to get annoying fast).
 - Search functionality (If I end up having around 150+ artpieces).
 - Comment section and like/dislike buttons (Will need backend for this.).
@@ -32,7 +36,12 @@ Website is now live at: [https://vercel.com/sebc750s-projects/art-gallery-portfo
 
 
 ## Tech Stack
+
+### Frontend
 - HTML
 - CSS
 - JSX
 - React.js
+### Backend
+- Python Flask
+- MongoDB
