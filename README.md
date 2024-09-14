@@ -18,9 +18,12 @@ I am happy to announce that I have completed the first version of the art galler
 - Used Bootstrap and react-router-dom to enhance styling and site navigation respectively.
 - Added links to my other social media (instagram, reddit and deviantart) for people to look deeper into my work and follow me there! However, i intend for this website to be a central hub for my art to be in so all future artworks will be served here first.
 
-## Development progress (as of 09/12/2024)
+## Development progress (as of 09/14/2024)
 - Initialized backend folder with a database.py file where I create a database class that holds credentials to access the db. Connection test was successful.
-- Initialized the commissions page where I show my prices for each type of artwork (sketch, lineart, color). 
+- Initialized the commissions page where I show my prices for each type of artwork (sketch, lineart, color). Still a work in progress.
+- UI improvements: Made navbar transparent + added linear gradient on the background for a more modern and polished look to the page. Removed Footer component now has better formatting (the top margin did not have enough padding). Added black borders to back to top button to prevent the secondary gradient color from occluding the button.
+- Better Mobile UI responsiveness: The previous version of the art gallery had the nav buttons joined together and rounded. This led to a rather awkward looking format for the navigation links. I modified the responsive changes so that the nav buttons are rearranged in a column format for portrait shaped windows. The navigation menu now looks more well-organized and fits better on mobile devices.
+- Fixed bug where code text is displayed by accident in the gallery page. This was due to a conditional statement not being closed properly. This has now been resolved.
 ## Future plans!
 Here are my future plans for the art gallery!
 - Finish writing routes and create API.js file to communicate with backend.

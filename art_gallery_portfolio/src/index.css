@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424 !important;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +17,7 @@ html,body{
   margin:0;
   padding:0;
   /* The !important tag overrides bootstrap's default background colors.*/
-  background-color: #242424 !important;
+  background: linear-gradient(#242424 50%, rgb(41, 207, 207));
 }
 h1{
   color: rgb(41, 207, 207);
@@ -34,6 +34,7 @@ a{
   --bs-btn-border-color: rgb(41, 207, 207);
   --bs-btn-hover-color: black;
   --bs-btn-hover-bg: rgb(41, 207, 207);
+  --bs-btn-hover-border-color: rgb(41, 207, 207);
 }
 .accordion{
   margin-bottom: 20px;

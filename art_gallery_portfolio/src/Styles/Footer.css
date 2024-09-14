@@ -22,40 +22,46 @@
     height: 90px;
 }
 .footer-message{
+    padding: 20px;
     color: rgb(41, 207, 207);
     text-align: center;
 }
 .footer{
     margin-top: 50px;
     height: 35vh;
-}
-.footer-bg{
     background-color: black;
 }
-.border{
-    width: 100%;
-    border-style: solid;
-    border-color: rgb(41, 207, 207);
-    border-width: 3px;
-    
+.footer-brand{
+    color: white;
+    opacity: 50%;
+    text-align: center;
+    font-size: 11px;
 }
 @media(max-width: 720px){
+    .footer-message h2{
+        font-size: 16px;
+    }
     .social-media-links{
-        flex-direction: column;
+        
         margin-left: 40px;
     }
     .social-media-logo{
-        width: 180px;
-        height: 180px;
+        width: 50px;
+        height: 50px;
     }
+   
     .social-media-logo:hover{
-        width: 160px;
-        height: 160px;
+        width: 60px;
+        height: 60px;
     }
     .logo-anchors p{
         font-size: 12px;
     }
     .footer{
-        height: 100vh;
+        height: 30vh;
+    }
+    .footer-brand{
+        
+        font-size: 8px;
     }
 }

@@ -22,7 +22,6 @@ const About = () => {
                         </h2>
                         <div id="question1" class="accordion-collapse collapse" data-bs-parent="#about-accordion">
                             <div class="accordion-body"> My name is Sebastian Chalarca (Also known as DeezDijou on the internet). I am an a software developer/web developer by day and cartoonist/animator by night. When I'm not too busy, I draw stuff (A lot of Goth stuff in particular) but I can do anything. I love to code, draw and play video games!</div>
-
                         </div>
                     </div>
 

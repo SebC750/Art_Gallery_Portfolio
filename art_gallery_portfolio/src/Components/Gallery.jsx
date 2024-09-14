@@ -63,7 +63,7 @@ const Gallery = () => {
                 setErrorMessage(null)
                 //Retrieve the sorted array of artworks and set the result to the sortedArray variable.
                 const sortedArray = sortByTitle([...allArtworks])
-               
+
                 if (!sortedArray) {
                     //If the algorithm fails, return the error message and close out of the function.
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
@@ -88,7 +88,7 @@ const Gallery = () => {
             try {
                 setErrorMessage(null)
                 const sortedArray = sortByDate([...allArtworks])
-                
+
                 if (!sortedArray) {
 
                     setErrorMessage("Oops, could not sort the artworks! Sorry!")
@@ -117,7 +117,6 @@ const Gallery = () => {
                     <div className="gallery-title" id="top-of-gallery">
                         Galleria
                     </div>
-
                     {/* Only show the error message if there is an error at all.*/}
                     {errorMessage ? <div className="error-message"> {errorMessage} </div> : null}
                     {/*First check if a user has selected an artwork. Otherwise, show the whole gallery. */}
@@ -140,76 +139,75 @@ const Gallery = () => {
 
                             </div>
                             {/*If no artworks in particular are selected by the user, we must first check if there are any artworks to show at all. */}
-                            allArtworks && !errorMessage ? (
-                            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
-                                {allArtworks.map((val, index) => (
-                                    <div key={index} className="art-gallery-properties">
-                                         {/* If a user clicks on the image, show the artwork by passing the data into the function*/}
-                                        <div
-                                            style={{
-                                                backgroundImage: `url(${val.file})`,
-                                                backgroundSize: 'cover',
-                                                backgroundPosition: 'center',
-                                                width: '100%',
-                                                height: '400px'
-                                            }}
+                            {allArtworks && !errorMessage ? (
+                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+                                    {allArtworks.map((val, index) => (
+                                        <div key={index} className="art-gallery-properties">
+                                            {/* If a user clicks on the image, show the artwork by passing the data into the function*/}
+                                            <div
+                                                style={{
+                                                    backgroundImage: `url(${val.file})`,
+                                                    backgroundSize: 'cover',
+                                                    backgroundPosition: 'center',
+                                                    width: '100%',
+                                                    height: '400px'
+                                                }}
 
+                                                onContextMenu={handleImgDownloadAttempt}
+                                                onDragStart={handleDragAttempt}
+
+                                                className="d-block w-100 img-thumbnail"
+
+                                                onClick={() => showSelectedArtwork(val.file, val.title, val.date, val.description)}
+                                            />
+                                            <h2 className="img-title"> {val.title}</h2>
+                                            <p>Date completed: {val.date}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                             ) : null }</div>) : (
+                            <div className="selected-artwork-container">
+                                <div className="row">
+                                    <div className="col">
+                                        <img
+                                            src={allArtworks.file}
                                             onContextMenu={handleImgDownloadAttempt}
                                             onDragStart={handleDragAttempt}
-
+                                            alt="This is the selected artwork."
                                             className="d-block w-100 img-thumbnail"
-                                           
-                                            onClick={() => showSelectedArtwork(val.file, val.title, val.date, val.description)}
                                         />
-                                        <h2 className="img-title"> {val.title}</h2>
-                                        <p>Date completed: {val.date}</p>
                                     </div>
-                                ))}
-                            </div>
-                            ) : null
-                        </div>) : (
-                        <div className="selected-artwork-container">
-                            <div className="row">
-                                <div className="col">
-                                    <img
-                                        src={allArtworks.file}
-                                        onContextMenu={handleImgDownloadAttempt}
-                                        onDragStart={handleDragAttempt}
-                                        alt="This is the selected artwork."
-                                        className="d-block w-100 img-thumbnail"
-                                    />
-                                </div>
 
-                                <div className="col d-flex flex-column">
-                                    {/* Make sure that the column for the artwork information is responsive to the image itself. This makes it so that the description box resizes according to the size of the image. */}
-                                    <div className="selected-artwork-description flex-grow-1">
-                                        <span>{allArtworks.title}</span>
-                                        <p>Date completed: {allArtworks.date}</p>
-                                        <div className="description-container flex-grow-1 d-flex flex-column justify-content-start">
-                                            <div className="description-title">
-                                                <p>Description</p>
-                                            </div>
-                                            <div className="description-content">
-                                                {allArtworks.description}
+                                    <div className="col d-flex flex-column">
+                                        {/* Make sure that the column for the artwork information is responsive to the image itself. This makes it so that the description box resizes according to the size of the image. */}
+                                        <div className="selected-artwork-description flex-grow-1">
+                                            <span>{allArtworks.title}</span>
+                                            <p>Date completed: {allArtworks.date}</p>
+                                            <div className="description-container flex-grow-1 d-flex flex-column justify-content-start">
+                                                <div className="description-title">
+                                                    <p>Description</p>
+                                                </div>
+                                                <div className="description-content">
+                                                    {allArtworks.description}
+                                                </div>
                                             </div>
                                         </div>
+                                        <button type="button" className="btn btn-outline-info btn-lg w-100 mt-auto" onClick={() => backToGallery()}> Back to Gallery</button>
                                     </div>
-                                    <button type="button" className="btn btn-outline-info btn-lg w-100 mt-auto" onClick={() => backToGallery()}> Back to Gallery</button>
-                                </div>
 
+                                </div>
                             </div>
-                        </div>
                     )}
 
 
 
-                    <a href="#top-of-gallery"> <button type="button" className="btn btn-outline-info w-100" style={{ marginBottom: 20 }}> Back to top</button>  </a>
-                </div>
+                           {!isArtworkSelected ? ( <a href="#top-of-gallery"> <button type="button" className="btn btn-outline-info w-100" id="back-to-top-btn" style={{ marginBottom: 20 }}> Back to top</button>  </a>) : null}
+                        </div>
 
             </div>
 
-            <Footer />
-        </div >
-    )
+                <Footer />
+            </div >
+            )
 }
-export default Gallery
+            export default Gallery
