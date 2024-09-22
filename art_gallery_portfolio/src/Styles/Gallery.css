@@ -74,6 +74,7 @@
     height: auto;
     margin-bottom: 20px;
     overflow: scroll;
+    background-color: #000000;
 }
 .description-title{
     background-color: rgb(41, 207, 207);

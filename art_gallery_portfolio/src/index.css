@@ -26,6 +26,9 @@ a{
   text-decoration: none;
   color: white;
 }
+p{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 /* Changing bootstrap sass variables to conform with the aesthetic theme of the website.*/
 .btn{
   --bs-btn-font-size: 16px;

@@ -188,7 +188,7 @@ const Gallery = () => {
                                                     <p>Description</p>
                                                 </div>
                                                 <div className="description-content">
-                                                    {allArtworks.description}
+                                                   <p> {allArtworks.description} </p> 
                                                 </div>
                                             </div>
                                         </div>

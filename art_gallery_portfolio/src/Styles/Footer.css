@@ -6,9 +6,9 @@
 }
 .social-media-logo{
     
-    width: 100px;
-    height: 100px;
-    
+    width: 80px;
+    height: 80px;
+   
     transition: all 0.3s ease;
 }
 .logo-anchors{
@@ -18,8 +18,8 @@
     margin-right: 50px;
 }
 .social-media-logo:hover{
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
 }
 .footer-message{
     padding: 20px;
@@ -28,8 +28,9 @@
 }
 .footer{
     margin-top: 50px;
-    height: 35vh;
+    height: 26vh;
     background-color: black;
+    
 }
 .footer-brand{
     color: white;
