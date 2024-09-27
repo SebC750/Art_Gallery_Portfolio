@@ -22,7 +22,7 @@ const routes = createBrowserRouter([{
   element: <Commissions/>
 }, {
   path: "/AdminDashboard",
-  element: <Dashboard/>
+  element: <AdminDashboard/>
 }])
 
 
