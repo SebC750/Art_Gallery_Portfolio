@@ -1,4 +1,4 @@
-import Navbar from "Navbar.jsx"
+import Navbar from "./Navbar"
 import "../Styles/Commissions.css"
 const CommissionsPage = () =>{
     /* This is my upcoming commissions page! I'm going to have a row of cards each showing the type of art I can make, an example image (or images) for what people can expect and also the prices. 

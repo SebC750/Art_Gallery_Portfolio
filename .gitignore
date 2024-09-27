@@ -25,4 +25,4 @@ dist-ssr
 
 #Env file
 .env
-.venv
+art_gallery_backend/myenv
