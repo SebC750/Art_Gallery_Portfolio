@@ -16,7 +16,8 @@ const Navbar = () => {
                     <div className="navbar-items">
                     <Link to="/"> <div className="btn btn-outline-info btn-lg">  Home  </div> </Link>
                     <Link to="/Gallery"> <div className="btn btn-outline-info btn-lg"> Gallery </div></Link>
-                    <Link to="/About">  <div className="btn btn-outline-info btn-lg">  About</div></Link>
+                    <Link to="/About">  <div className="btn btn-outline-info btn-lg">  About </div></Link>
+                    <Link to="/Commissions"> <div className="btn btn-outline-info btn-lg">  Commissions </div> </Link>
                     </div>
                 </nav>
             </header>

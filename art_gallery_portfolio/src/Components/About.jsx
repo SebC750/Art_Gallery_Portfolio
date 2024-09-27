@@ -4,7 +4,6 @@ import Footer from "./Footer.jsx"
 import {Link} from "react-router-dom"
 const About = () => {
     //This is the about page. It is where I answer hypothetical questions about myself, why I became an artist and then programmer, and what software I use for drawing art.
-    //A container is set which will help to organize the rest of the elements. Inside the container, there is an accordion element which is a section that contains the list of accordion dropdowns. 
     //Each accordion dropdown has an FAQ question and a response to it that is revealed when opening them by clicking on the dropdown icons.  
     //Started with boilerplate accordion code from Bootstrap docs and then customized it to fit the website's color theme.
     return (

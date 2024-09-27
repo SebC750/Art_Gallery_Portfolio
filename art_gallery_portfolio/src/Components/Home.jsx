@@ -3,9 +3,9 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import {Link} from "react-router-dom"
 //This is the homepage. Users will be greeted by this page upon entering the site. You will see here a brief introduction that explains who I am and what this website is about.
-//To the right of the introduction is a carousel that switches between multiple images. This is meant to give users am expectation of the type of content they will see in this page.
+//To the right of the introduction is a carousel that switches between multiple images. This is meant to give users an expectation of the type of content they will see in this page.
 const Home = () => {
-    //Set the carousel dimensions to fit in the screen and align with the introduction.
+    
     const carouselImageDimensions = { width: 600, height: 1000 }
     return (
         <div>

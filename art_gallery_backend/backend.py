@@ -6,13 +6,7 @@ import os
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-#This is the backend file where all the routes handling CRUD api calls for creating, retrieving, updating and deleting artworks.
-
 load_dotenv()
-
-app = Flask(__name__)
-
-CORS(app)
 
 host = os.getenv('DB_HOST')
 dbname = os.getenv('DB_NAME')
@@ -46,45 +40,7 @@ class Database():
             except:
                 return jsonify({"Message" : "Database refuses to disconnect. "}), 500
     
-#Get the connection and the specific database that stores all the data.
-database = Database()
 
-def preprocess_objectids(doc):
-    #This function helps to convert objectids into a jsonifiable format by iterating through each document and casting the id type to string.
-    #Its not typical for me to convert ids to str values but as long as I don't need to do mathematical operations on them.
-    for i in doc:
-        i['_id'] = str(i['_id'])
-    return doc
 
-#Just have these test routes here but all routes will be in a separate py file in the future.
-@app.route('/')
-def welcome_msg():
-     #Welcome message for a warming greeting. :)
-     return jsonify({"message": "Hello world! Welcome to the art gallery api.",})
-
-@app.route('/get_all_artworks', methods=['GET'])
-def get_all_art():
-     try:
-        db = database.connect()
-        #Send a query to retrieve all the artwork documents from the artworks collection in the mongodb database. 
-        query = db['Artworks'].find({})
-        #Store all the artworks in a list to be jsonified and returned back to the client.
-        all_artworks = [art for art in query]
-        
-        if not all_artworks:
-            return jsonify({'Message' : 'Could not retrieve all the artworks'}), 404
-        #Otherwise, convert all object_ids to string for jsonifying.
-        all_artworks_result = preprocess_objectids(all_artworks)
-        #Return the results.
-        return jsonify({"All artworks" : all_artworks_result}), 200
-     except Exception as e:
-       
-        return jsonify({'Message' : 'Could not execute database query', 'error' : str(e)}), 500
-     finally:
-         database.disconnect()
-
-if __name__ in "__main__":
-   
-   app.run(debug=True)
 
 

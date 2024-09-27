@@ -10,7 +10,7 @@ function merge(list, left, split, right, compareType){
       //First, we set the sizes of the left and right array.
       const leftListSize = split - left +1
       const rightListSize = right - split
-      //Out-of-place algorithm: We then initialize the left and right arrays with their respective sizes. These are temporarily used to store the values to the left of the splitting point in the left array and vice versa.
+      
       const tempLeftList = new Array(leftListSize)
       const tempRightList = new Array(rightListSize)
       
