@@ -46,5 +46,5 @@ Website is now live at: [https://vercel.com/sebc750s-projects/art-gallery-portfo
 - JSX
 - React.js
 ### Backend
-- Python Flask
-- MongoDB
+- Node.js
+- Firebase Firestore
