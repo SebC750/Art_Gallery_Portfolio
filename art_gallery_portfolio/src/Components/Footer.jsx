@@ -11,9 +11,8 @@ const Footer = () => {
                         <h2> Like what you see? Check out more of my stuff at: </h2>
                     </div>
                     <div className="social-media-links">
-                        <a href="https://www.instagram.com/deezdijou/" className="logo-anchors"> <img src="Assets/instagram_logo.svg" className="social-media-logo" alt="this is the instagram logo" /> <p> deezdijou</p></a>
-                        <a href="https://www.reddit.com/user/Reub_ic/" className="logo-anchors"><img src="Assets/reddit_logo.svg" className="social-media-logo" alt="this is the reddit logo" /> <p> deezdijou</p></a>
-                        <a href="https://www.deviantart.com/derpytots" className="logo-anchors"><img src="Assets/deviantart_logo.svg" className="social-media-logo" alt="this is the deviantart logo" /> <p> DerpyTots </p></a>
+                        <a href="https://www.instagram.com/sebastianchalarcadev/" className="logo-anchors text-info"> <img src="social_media_icons/Reddit_Icon_2Color.svg" alt="reddit account link" aria-label="reddit logo account link" height="50" width="50"/> Reub_ic</a>
+                        <a href="https://www.reddit.com/user/Reub_ic/" className="logo-anchors text-info"> <img src="social_media_icons/Instagram_Glyph_Gradient.svg" alt="instagram account link" aria-label="instagram logo account link" height="50" width="50"/> sebastianchalarcadev</a>                      
                     </div>
                     <p align="center" class="footer-brand"> Art Gallery, Sebastian Chalarca 2024</p>
                 </div>
