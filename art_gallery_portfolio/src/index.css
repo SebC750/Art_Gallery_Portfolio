@@ -2,11 +2,10 @@
   font-family: roboto;
   line-height: 1.5;
   font-weight: 400;
-
+  flex: 1;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   
-
+  background-color: black !important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,12 +15,12 @@
 html,body{
   margin:0;
   padding:0;
-  /* The !important tag overrides bootstrap's default background colors.*/
-  background: linear-gradient(#242424 50%, rgb(41, 207, 207));
+  height: 100vh;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(#242424 75%, rgb(0, 0, 0));
+  background-color: rgb(56, 58, 64) !important;
 }
-h1{
-  color: rgb(41, 207, 207);
-}
+
 a{
   text-decoration: none;
   color: white;
@@ -29,25 +28,9 @@ a{
 p{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-/* Changing bootstrap sass variables to conform with the aesthetic theme of the website.*/
-.btn{
-  --bs-btn-font-size: 16px;
-  --bs-btn-bg: transparent;
-  --bs-btn-color: rgb(41, 207, 207);
-  --bs-btn-border-color: rgb(41, 207, 207);
-  --bs-btn-hover-color: black;
-  --bs-btn-hover-bg: rgb(41, 207, 207);
-  --bs-btn-hover-border-color: rgb(41, 207, 207);
-}
 .accordion{
-  margin-bottom: 20px;
-  --bs-accordion-color: rgb(41, 207, 207);
-  --bs-accordion-btn-color: rgb(41, 207, 207);
-  --bs-accordion-bg: #151515;
-  --bs-accordion-btn-bg: #151515;
-  --bs-accordion-active-bg: #151515;
-  --bs-accordion-active-color: rgb(41, 207, 207);
-  --bs-accordion-border-color: rgb(41, 207, 207);
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-bg: rgb(56, 58, 64);
+  --bs-accordion-color: rgb(53, 195, 247);
+  --bs-accordion-btn-color:rgb(53, 195, 247);
+  --bs-accordion-border-color:rgb(53, 195, 247);
 }

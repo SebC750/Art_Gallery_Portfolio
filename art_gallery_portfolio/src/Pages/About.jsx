@@ -1,6 +1,6 @@
-import Navbar from "./Navbar.jsx"
+import Navbar from "../Components/Navbar.jsx"
 import "../Styles/About.css"
-import Footer from "./Footer.jsx"
+import Footer from "../Components/Footer.jsx"
 import {Link} from "react-router-dom"
 const About = () => {
     //This is the about page. It is where I answer hypothetical questions about myself, why I became an artist and then programmer, and what software I use for drawing art.
@@ -10,9 +10,9 @@ const About = () => {
         <div>
             <Navbar />
 
-            <div className="container" >
-                <div className="about-title" id="top-of-about"> FAQ / About </div>
-                <div class="accordion" id="about-accordion">
+            <div className="container">
+                <h2 className="text-info text-center p-3" id="top-of-about"> FAQ / About </h2>
+                <div class="accordion accordion-flush mb-3" id="about-accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question1" aria-expanded="false" aria-controls="question1">

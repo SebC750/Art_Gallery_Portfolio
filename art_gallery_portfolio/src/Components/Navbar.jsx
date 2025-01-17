@@ -7,16 +7,14 @@ const Navbar = () => {
         <div>
             
             <header>
-                <nav className="navbar">
-
-                    <div className="navbar-logo">
-                        
+                <nav className="mx-4 navbar">
+                    <h1 className="text-info fs-3 p-2">
                         SEBASTIAN CHALARCA
-                    </div>
-                    <div className="navbar-items">
-                    <Link to="/"> <div className="btn btn-outline-info btn-lg"> Home  </div> </Link>
-                    <Link to="/Gallery"> <div className="btn btn-outline-info btn-lg"> Gallery </div></Link>
-                    <Link to="/About">  <div className="btn btn-outline-info btn-lg">  About </div></Link>
+                    </h1>
+                    <div className="d-flex gap-2">
+                    <Link to="/"> <a role="button" className="btn btn-info rounded-pill shadow"> Home  </a> </Link>
+                    <Link to="/Gallery"> <a role="button" className="btn btn-info rounded-pill shadow"> Gallery </a></Link>
+                    <Link to="/About">  <a role="button" className="btn btn-info rounded-pill shadow">  About </a></Link>
                     
                     </div>
                 </nav>

@@ -1,9 +1,9 @@
 import artworks from "../artworks.json"
 import { useState, useEffect } from "react"
 import "../Styles/Gallery.css"
-import Navbar from "./Navbar.jsx"
-import Footer from "./Footer.jsx"
-import { sortByTitle, sortByDate } from "./SortByFilter.js"
+import Navbar from "../Components/Navbar.jsx"
+import Footer from "../Components/Footer.jsx"
+import { sortByTitle, sortByDate } from "../Utilities/SortByFilter.js"
 /* 
 Gallery: This is the gallery page. It is where all of the artworks are shown to the user. For compactness and organization, I organized the artworks in rows of 3 images each.
 The gallery includes all of the artworks and a sort by option that allows you to sort the images by either title or the date they were first published on the internet. 
@@ -108,36 +108,31 @@ const Gallery = () => {
             <Navbar />
             <div id="Gallery">
                 <div className="container">
-
-                    <div className="gallery-title" id="top-of-gallery">
+                    <h2 className="text-info text-center p-3" id="top-of-gallery">
                         Galleria
-                    </div>
-                    
+                    </h2>                   
                     {errorMessage ? <div className="error-message"> {errorMessage} </div> : null}
                     {/*First check if a user has selected an artwork. Otherwise, show the whole gallery. */}
                     {!isArtworkSelected ? (
-                        <div>
-                            
-                            <div className="dropdown">
-                                <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Sort by</button>
+                        <div>                         
+                            <div className="dropdown p-3 d-flex justify-content-center">
+                                <button type="button" className="btn btn-info btn-lg rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Sort by</button>
                                 <div className="dropdown-menu">
                                     <ul>
-                                        <div className="dropdown-item" onClick={() => sortByFilter("title")}>
+                                        <li className="dropdown-item" onClick={() => sortByFilter("title")}>
                                             Title
-                                        </div>
-                                        <div className="dropdown-item" onClick={() => sortByFilter("date")}>
+                                        </li>
+                                        <li className="dropdown-item" onClick={() => sortByFilter("date")}>
                                             Year Completed
-                                        </div>
+                                        </li>
                                     </ul>
 
                                 </div>
-
-                            </div>
-                           
+                            </div>                          
                             {allArtworks && !errorMessage ? (
-                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                                     {allArtworks.map((val, index) => (
-                                        <div key={index} className="art-gallery-properties">
+                                        <div key={index} className="bg-transparent text-center p-4 text-info art-gallery-properties">
                                             
                                             <div
                                                 style={{
@@ -151,7 +146,7 @@ const Gallery = () => {
                                                 onContextMenu={handleImgDownloadAttempt}
                                                 onDragStart={handleDragAttempt}
 
-                                                className="d-block w-100 img-thumbnail"
+                                                className="d-block w-100 img-fluid"
 
                                                 onClick={() => showSelectedArtwork(val.file, val.title, val.date, val.description)}
                                             />
@@ -169,17 +164,17 @@ const Gallery = () => {
                                             onContextMenu={handleImgDownloadAttempt}
                                             onDragStart={handleDragAttempt}
                                             alt="This is the selected artwork."
-                                            className="d-block w-100 img-thumbnail"
+                                            className="d-block w-100 img-fluid shadow"
                                         />
                                     </div>
 
                                     <div className="col d-flex flex-column">
                                         
-                                        <div className="selected-artwork-description flex-grow-1">
+                                        <div className="selected-artwork-description text-info flex-grow-1">
                                             <span>{allArtworks.title}</span>
                                             <p>Date completed: {allArtworks.date}</p>
                                             <div className="description-container flex-grow-1 d-flex flex-column justify-content-start">
-                                                <div className="description-title">
+                                                <div className="description-title bg-info">
                                                     <p>Description</p>
                                                 </div>
                                                 <div className="description-content">
@@ -196,7 +191,7 @@ const Gallery = () => {
 
 
                            {/* The selected artwork page doesn't need a back to top button cause the components are sized to fit in the viewport.*/}
-                           {!isArtworkSelected ? ( <a href="#top-of-gallery"> <button type="button" className="btn btn-outline-info w-100" id="back-to-top-btn" style={{ marginBottom: 20 }}> Back to top</button>  </a>) : null}
+                           {!isArtworkSelected ? ( <a href="#top-of-gallery"> <button type="button" className="btn btn-info w-100" id="back-to-top-btn" style={{ marginBottom: 20 }}> Back to top</button>  </a>) : null}
                         </div>
 
             </div>
