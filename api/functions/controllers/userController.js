@@ -24,14 +24,14 @@ const deleteUser = async (req,res) =>{
 }
 
 const userControllers = {
-  getUserById: getUserById(),
-  login: login(),
-  logout: logout(),
-  register: register(),
-  updateUsername: updateUsername(),
-  updatePassword: updatePassword(),
-  updateUserEmail: updateUserEmail(),
-  deleteUser: deleteUser()
+  getUserById,
+  login,
+  logout,
+  register,
+  updateUsername,
+  updatePassword,
+  updateUserEmail,
+  deleteUser
 }
 
 module.exports = userControllers;

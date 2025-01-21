@@ -19,12 +19,12 @@ const deleteComment = async (req,res) => {
 }
 
 const commentControllers = {
-   getAllCommentsByUserId: getAllCommentsByUserId(),
-   getCommentByUserId: getCommentByUserId(),
-   getAllCommentsByArtworkId: getAllCommentsByArtworkId(),
-   postNewComment: postNewComment(),
-   updateComment: updateComment(),
-   deleteComment: deleteComment()
+   getAllCommentsByUserId,
+   getCommentByUserId,
+   getAllCommentsByArtworkId,
+   postNewComment,
+   updateComment,
+   deleteComment
 }
 
 module.exports = commentControllers
