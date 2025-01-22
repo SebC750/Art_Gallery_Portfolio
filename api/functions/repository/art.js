@@ -2,9 +2,9 @@ const connection = require("../config/db")
 const db = connection.getDB();
 
 class ArtRepository{
-    constructor(collection){
+    constructor(){
         if(!instance){
-            this.collection = collection;
+            this.collection = "artworks";
             instance = this;
         }
          return instance;
@@ -17,8 +17,8 @@ class ArtRepository{
          }))
          return artworks;
     }
-    async getArtworksById(id){
-         const response = await db.collection("artworks").doc(id).get();
+    async getArtworksById(artId){
+         const response = await db.collection("artworks").doc(artId).get();
          const artwork = {
             id: response.id,
             ...response.data()
@@ -29,11 +29,20 @@ class ArtRepository{
          const response = await db.collection("artworks").doc().set(metadata)
          return response;
     }
-    async updateArtwork(id, newValue){
-         const response = await db.collection("artworks").doc(id).set({attribute: newValue})
+    async updateArtwork(artId, newMetadata){
+         const response = await db.collection("artworks").doc(artId).update(newMetadata)
+         if(!response){
+          console.error("Error. Could not update artwork metadata.")
+            return;
+         }
+         return response;
     }
-    async deleteArtwork(id){
-
+    async deleteArtwork(artId){
+         const response = await db.collection("artworks").doc(artId).delete();
+         if(!response){
+          console.error("Error. Could not delete artwork from metadata.")
+         }
+         return response;
     }
 }
 
