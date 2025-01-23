@@ -1,5 +1,6 @@
 import "../Styles/AdminDashboard.css"
 import {useState, useEffect} from "react"
+import artworkAPI from "../api/artworkAPI"
 const AdminDashboard = () =>{
         
         const [artworks, setArtworks] = useState([])

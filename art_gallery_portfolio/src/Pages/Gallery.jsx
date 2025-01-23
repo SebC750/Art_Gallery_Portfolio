@@ -3,6 +3,9 @@ import { useState, useEffect } from "react"
 import "../Styles/Gallery.css"
 import Navbar from "../Components/Navbar.jsx"
 import Footer from "../Components/Footer.jsx"
+import artworkAPI from "../api/artworkAPI.js"
+import commentApi from "../api/commentAPI.js"
+import userAPI from "../api/userAPI.js"
 import { sortByTitle, sortByDate } from "../Utilities/SortByFilter.js"
 /* 
 Gallery: This is the gallery page. It is where all of the artworks are shown to the user. For compactness and organization, I organized the artworks in rows of 3 images each.
