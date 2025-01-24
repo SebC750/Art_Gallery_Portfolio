@@ -35,7 +35,7 @@ Here are my future plans for the art gallery!
 - UI and function improvements.
 
 Looking forward to seeing you all at the website! Come take a look! Hope you like what I have to show!
-Website is now live at: [https://vercel.com/sebc750s-projects/art-gallery-portfolio](https://art-gallery-portfolio-dvkxa31b2-sebc750s-projects.vercel.app/)
+Website is now live here: [Live website](art-gallery-app-3fddc.web.app/)
 
 
 ## Tech Stack
@@ -46,5 +46,6 @@ Website is now live at: [https://vercel.com/sebc750s-projects/art-gallery-portfo
 - JSX
 - React.js
 ### Backend
-- Node.js
-- Firebase Firestore
+- Node.js express
+- Firebase 
+(Firebase authentication, Firebase Firestore, Firebase hosting, Firebase functions)

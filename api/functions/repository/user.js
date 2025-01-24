@@ -9,9 +9,6 @@ class UserRepository{
         }
          return instance;
     }
-    async logout(){
-        
-    }
     async getUserById(userId){
         const response = await db.collection(this.collection).doc(userId).get();
         const userData = {
@@ -78,11 +75,16 @@ class ThirdPartyAuthUserRepository extends UserRepository{
     async createNewUser(email, password, oauthProvider){
 
     }
+    async addUsername(username){
+
+    }
 }
+const userRepository = new UserRepository();
 const loginUserRepository = new LoginUserRepository();
 const thirdPartyAuthUserRepository = new ThirdPartyAuthUserRepository();
 
 module.exports = {
+    baseUserRepository: userRepository,
     logRepository: loginUserRepository,
     thirdPartyRepository: thirdPartyAuthUserRepository
 }

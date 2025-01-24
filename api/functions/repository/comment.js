@@ -9,29 +9,40 @@ class CommentRepository{
         }
          return instance;
     }
-    async getAllCommentsByUserId(userId){
-        const response = await db.collection(this.collection).doc(userId).get();
-    }
     async getCommentByUserId(userId){
-        
+        const response = await db.collection(this.collection).doc(userId).get();
+        const comment = {
+            id: response.id,
+            ...response.data()
+        }
+        return comment;
     }
     async getAllCommentsByArtworkId(artId){
         const response = await db.collection(this.collection).doc(artId).get();
-
+        const commentSection = response.docs.map((art) => ({
+            id: art.id,
+            ...art.data()
+        }))
+        return commentSection;
     }
     async postNewComment(userId, artId, metadata){
         const response = await db.collection(this.collection).doc(artId).set(
                 {
-                id: userId,
+                userId: userId,
                 artId: artId,
                 ...metadata,
             })
+        return response;
     }
-    async updateComment(userId, artId){
-
+    async updateComment(commentId, newContent){
+        const response = await db.collection(this.collection.doc(commentId)).set({
+            content: newContent
+        })
+        return response;
     }         
-    async deleteComment(userId, artId){
- 
+    async deleteComment(commentId){
+        const response = await db.collection(this.collection).doc(commentId).delete()
+        return response;
     }
 }
 
