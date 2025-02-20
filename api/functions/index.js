@@ -1,15 +1,15 @@
 const express = require("express");
 const app = express();
 const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
-const artRoutes = require("./routes/artRoutes")
-const userRoutes = require("./controllers/userRoutes")
-const commentRoutes = require("./controllers/commentRoutes")
-
+const artRouter = require("./routes/artRouter")
+const userRouter = require("./routes/userRouter")
+const commentRouter = require("./routes/commentRouter")
+const cookieParser = require("cookie-parser")
 app.use(express.json())
+app.use(cookieParser())
+app.use("/artworks", artRouter);
+app.use("/users", userRouter);
+app.use("/comments", commentRouter);
 
-app.use("/artworks", artRoutes);
-app.use("/users", userRoutes);
-app.use("/comments", commentRoutes);
 
 exports.api = onRequest(app)

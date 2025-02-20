@@ -1,90 +1,127 @@
-const connection = require("../config/db")
+const connection = require("../config/db");
+const { hashPassword, comparePassword } = require("../utilities/hashing");
 const db = connection.getDB();
-
-class UserRepository{
-    constructor(){
-        if(!instance){
+const checkIfUserExists = require("../utilities/checkIfExists")
+const generateJWTToken = require("../utilities/jwt")
+class UserRepository {
+    static instance = null;
+    constructor() {
+        if (!UserRepository.instance) {
             this.collection = "users";
-            instance = this;
+            UserRepository.instance = this;
         }
-         return instance;
+        return UserRepository.instance;
     }
-    async getUserById(userId){
-        const response = await db.collection(this.collection).doc(userId).get();
-        const userData = {
-            id: response.id,
-            ...response.data()
-        }
+    async getAllUsers() {
+        const response = await db.collection(this.collection).get();
+        const userData = response.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }))
         return userData;
     }
-    async updateUsername(userId, newUsername){
+    async getUserById(userId) {
+        if (!userId) {
+            throw new Error("Invalid userId: userId cannot be empty or undefined.");
+        }
+
+        const response = await db.collection(this.collection).doc(userId).get();
+
+        if (!response.exists) {
+            return { message: "User not found.", status: 404 };
+        }
+
+        return { id: response.id, ...response.data() };
+    }
+    async login(username, password, res) {
+        if (!username || !password) {
+            return res.status(400).json({ message: "Missing username or password" });
+        }
+        const response = await db.collection(this.collection)
+            .where("username", "==", username)
+            .get();
+    
+        if (response.empty) {
+            return res.status(404).json({ message: "Could not find user credentials." });
+        }
+    
+        const userDoc = response.docs[0];
+        const userData = userDoc.data();
+        
+        const isPasswordValid = await comparePassword(password, userData.password);
+    
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: "Invalid password." });
+        }
+    
+        const userToken = await generateJWTToken(username);
+    
+        if (!userToken) {
+            return res.status(500).json({ message: "Failed to generate token." });
+        }
+    
+        res.cookie("jwt", userToken, {
+            httpOnly: true,
+            secure: false,
+            sameSite: "Lax",
+            maxAge: 60 * 60 * 1000
+        });
+        return res.json({ message: "Successful login.", token: userToken, status: 200 });
+    }
+    
+
+    async register(username, password) {
+        const hashedPassword = await hashPassword(password)
+        const doesUserExist = await checkIfUserExists(username);
+        if (doesUserExist) {
+            return { message: "Username already taken", status: 403 };
+        }
+        const newDoc = {
+            username: username,
+            password: hashedPassword
+        }
+        const response = await db.collection(this.collection).add(newDoc)
+        if (!response.id) {
+            return { message: "Could not register account.", status: 400 };
+        }
+        return { message: "Account successfully created", status: 200 };
+    }
+    async updateUsername(userId, newUsername) {
         const response = await db.collection(this.collection).doc(userId).update({
             username: newUsername
         })
-        if(!response){
+        if (!response) {
             return;
         }
         return response;
     }
-    async updatePassword(userId, newPassword){
+    async updatePassword(userId, newPassword) {
         const response = await db.collection(this.collection).doc(userId).update({
             password: newPassword
         })
-        if(!response){
+        if (!response) {
             return;
         }
         return response;
     }
-    async updateEmail(userId, newEmail){
+    async updateEmail(userId, newEmail) {
         const response = await db.collection(this.collection).doc(userId).update({
             email: newEmail
         })
-        if(!response){
+        if (!response) {
             return;
         }
         return response;
     }
-    async deleteUser(userId){
+    async deleteUser(userId) {
         const response = await db.collection(this.collection).doc(userId).delete();
-        if(!response){
+        if (!response) {
             return;
         }
-        return response;  
+        return response;
     }
 }
 
-class LoginUserRepository extends UserRepository{
-    LoginUserRepository(){
-        super();
-    }
-    async loginAuthentication(username, password){
-       
-    }
-    async createNewUser(username, email, password){
-
-    }
-}
-
-class ThirdPartyAuthUserRepository extends UserRepository{
-    ThirdPartyAuthUserRepository(){
-        super()
-    }
-    async loginAuthentication(email, password){
-
-    }
-    async createNewUser(email, password, oauthProvider){
-
-    }
-    async addUsername(username){
-
-    }
-}
 const userRepository = new UserRepository();
-const loginUserRepository = new LoginUserRepository();
-const thirdPartyAuthUserRepository = new ThirdPartyAuthUserRepository();
 
-module.exports = {
-    baseUserRepository: userRepository,
-    logRepository: loginUserRepository,
-    thirdPartyRepository: thirdPartyAuthUserRepository
-}
+module.exports = userRepository

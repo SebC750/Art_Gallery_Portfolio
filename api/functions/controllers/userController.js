@@ -1,71 +1,98 @@
 const baseUserRepository = require("../repository/user");
-const admin = require("firebase/auth");
-const baseUserInterface = baseUserRepository.baseUserRepository;
-const loginInterface = userRepository.logRepository;
-const thirdPartyAuthInterface = userRepository.thirdPartyRepository;
-
-const getUserById = async (req,res) =>{
-   
-   try{
-       const response = baseUserInterface.getUserById()
-   }catch(e){
-    throw e
-   }
+const baseUserInterface = baseUserRepository;
+const getAllUsers = async (req, res) => {
+  try {
+    const response = await baseUserInterface.getAllUsers()
+    res.json({ data: response })
+  } catch (e) {
+    console.log(e)
+  }
 }
-const login = async (req,res) =>{
- try{
+const getUserById = async (req, res) => {
+  const { userId } = req.params;
 
-   }catch(e){
-    throw e
-   }
-}
-const register = async (req,res) =>{
-  try{
+  if (!userId) {
+      return res.status(400).json({ message: "Missing userId in request." });
+  }
 
-  }catch(e){
+  try {
+      const user = await baseUserInterface.getUserById(userId);
+      res.json(user);
+  } catch (error) {
+      console.error("Error fetching user:", error);
+      res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+const login = async (req, res) => {
+  try {
+      await baseUserInterface.login(username, password, res);
+  } catch (error) {
+      res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+const register = async (req, res) => {
+  try {
+    const { username, password } = req.body
+    const response = baseUserInterface.register(username, password);
+    res.json(response)
+  } catch (e) {
     throw e
   }
 }
-const updatePassword = async (req,res) => {
-  try{
+const logout = async (res) => {
+  res.cookie("jwt", "", {
+    maxAge: 0,
+    httpOnly: true,
+    //secure: true, 
+    sameSite: "Strict"
+  });
+  
+  res.json({ message: "Logged out successfully" });
+}
+const updatePassword = async (req, res) => {
+  try {
 
-  }catch(e){
+  } catch (e) {
     throw e
   }
 }
-const updateUsername = async (req,res) =>{
-  try{
+const updateUsername = async (req, res) => {
+  try {
 
-  }catch(e){
+  } catch (e) {
     throw e
   }
 }
-const updateUserEmail = async (req,res) =>{
-  try{
+const updateUserEmail = async (req, res) => {
+  try {
 
-  }catch(e){
+  } catch (e) {
     throw e
   }
 }
-const deleteUser = async (req,res) =>{
-  try{
+const deleteUser = async (req, res) => {
+  try {
 
-  }catch(e){
+  } catch (e) {
     throw e
   }
 }
-const addUsername = async (req,res) => {
-  try{
+const addUsername = async (req, res) => {
+  try {
 
-  }catch(e){
+  } catch (e) {
     throw e
   }
 }
 
 const userControllers = {
+  getAllUsers,
   getUserById,
   login,
   register,
+  logout,
   addUsername,
   updateUsername,
   updatePassword,

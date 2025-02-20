@@ -1,18 +1,19 @@
 const express = require("express");
-const router = express.Router();
+const userRouter = express.Router();
 const userControllers = require("../controllers/userController");
 const firebaseAuth = require("../middleware/authentication")
 const logApiCall = require("../middleware/logging")
 
-router.use(logApiCall)
+userRouter.use(logApiCall)
+userRouter.get("/", userControllers.getAllUsers)
+userRouter.get("/:id", userControllers.getUserById);
+userRouter.post("/login", userControllers.login);
+userRouter.post("/register", userControllers.register);
+userRouter.post("/logout", userControllers.logout);
+userRouter.post("/username", firebaseAuth, userControllers.addUsername);
+userRouter.put("/username/:id", firebaseAuth, userControllers.updateUsername)
+userRouter.put("/email/:id", firebaseAuth, userControllers.updateUserEmail);
+userRouter.put("/password/:id", firebaseAuth, userControllers.updatePassword);
+userRouter.delete("/:id", firebaseAuth, userControllers.deleteUser);
 
-router.get("/:id", userControllers.getUserById);
-router.post("/login", userControllers.login);
-router.post("/register", userControllers.register);
-router.post("/username", firebaseAuth, userControllers.addUsername);
-router.put("/username/:id", firebaseAuth, userControllers.updateUsername)
-router.put("/email/:id", firebaseAuth, userControllers.updateUserEmail);
-router.put("/password/:id", firebaseAuth, userControllers.updatePassword);
-router.delete("/:id", firebaseAuth, userControllers.deleteUser);
-
-module.exports = router    
+module.exports = userRouter  

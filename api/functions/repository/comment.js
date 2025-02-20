@@ -2,12 +2,13 @@ const connection = require("../config/db")
 const db = connection.getDB();
 
 class CommentRepository{
+    static instance = null;
     constructor(){
-        if(!instance){
+        if(!CommentRepository.instance){
             this.collection = "comments";
-            instance = this;
+            CommentRepository.instance = this;
         }
-         return instance;
+         return CommentRepository.instance;
     }
     async getCommentByUserId(userId){
         const response = await db.collection(this.collection).doc(userId).get();
