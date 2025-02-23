@@ -12,23 +12,24 @@ const getUserById = async (req, res) => {
   const { userId } = req.params;
 
   if (!userId) {
-      return res.status(400).json({ message: "Missing userId in request." });
+    return res.status(400).json({ message: "Missing userId in request." });
   }
 
   try {
-      const user = await baseUserInterface.getUserById(userId);
-      res.json(user);
+    const user = await baseUserInterface.getUserById(userId);
+    res.json(user);
   } catch (error) {
-      console.error("Error fetching user:", error);
-      res.status(500).json({ message: "Internal server error." });
+    console.error("Error fetching user:", error);
+    res.status(500).json({ message: "Internal server error." });
   }
 };
 
 const login = async (req, res) => {
   try {
-      await baseUserInterface.login(username, password, res);
+    const { username, password } = req.body
+    await baseUserInterface.login(username, password, res);
   } catch (error) {
-      res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
@@ -48,7 +49,7 @@ const logout = async (res) => {
     //secure: true, 
     sameSite: "Strict"
   });
-  
+
   res.json({ message: "Logged out successfully" });
 }
 const updatePassword = async (req, res) => {
