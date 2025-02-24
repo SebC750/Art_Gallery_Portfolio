@@ -1,13 +1,14 @@
 import APIconfigs from "./config";
 
 class UserAPI {
+    static instance = null;
     constructor(configurations) {
-        if (!instance) {
+        if (!UserAPI.instance) {
             this.apiURL = configurations.apiURL;
             this.headers = configurations.headers;
-            instance = this;
+            UserAPI.instance = this;
         }
-        return instance;
+        return UserAPI.instance;
     }
     async getUsersById(){
         

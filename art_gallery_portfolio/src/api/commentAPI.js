@@ -1,13 +1,14 @@
 import APIconfigs from "./config";
 
 class CommentAPI{
+    static instance = null;
     constructor(configurations){
-         if(!instance){
+         if(!CommentAPI.instance){
             this.apiURL = configurations.apiURL
             this.header = configurations.headers
-            instance = this;
+            CommentAPI.instance = this;
          }
-         return instance;
+         return CommentAPI.instance;
     }
     async getCommentByUserId(){
 

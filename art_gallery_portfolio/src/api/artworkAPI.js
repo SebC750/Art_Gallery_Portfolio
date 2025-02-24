@@ -1,16 +1,17 @@
 import APIconfigs from "./config";
 
 class ArtworkAPI{
+     static instance = null;
     constructor(configurations){
-         if(!instance){
+         if(!ArtworkAPI.instance){
             this.apiURL = configurations.apiURL
             this.header = configurations.headers
-            instance = this
+            ArtworkAPI.instance = this
          }
-         return instance;
+         return ArtworkAPI.instance;
     }
     async getAllArtworks(){
-         const apiCall = this.apiURL+`/api/functions/getAllArtworks`
+         const apiCall = this.apiURL+`/functions/getAllArtworks`
          const response = await fetch(apiCall)
          .then(data => data.json())
          .catch(e => console.error(e));
