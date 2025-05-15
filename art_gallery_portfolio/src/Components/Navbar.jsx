@@ -4,18 +4,16 @@ import {Link} from "react-router-dom"
 //UPDATE (09/14/2024): I felt like the navbar would fit better if it was transparent to further minimalize the webpage design.
 const Navbar = () => {
     return (
-        <div>
-            
-            <header>
+        <div>           
+            <header className="bg-black">
                 <nav className="mx-4 navbar">
                     <h1 className="text-info fs-3 p-2">
                         SEBASTIAN CHALARCA
                     </h1>
-                    <div className="d-flex gap-2">
+                    <div>
                     <Link to="/"> <a role="button" className="btn btn-info rounded-pill shadow"> Home  </a> </Link>
                     <Link to="/Gallery"> <a role="button" className="btn btn-info rounded-pill shadow"> Gallery </a></Link>
-                    <Link to="/About">  <a role="button" className="btn btn-info rounded-pill shadow">  About </a></Link>
-                    
+                    <Link to="/About">  <a role="button" className="btn btn-info rounded-pill shadow">  About </a></Link>                
                     </div>
                 </nav>
             </header>
