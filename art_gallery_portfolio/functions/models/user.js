@@ -69,7 +69,6 @@ class UserRepository {
         return res.json({ message: "Successful login.", token: userToken, status: 200 });
     }
     
-
     async register(username, password) {
         const hashedPassword = await hashPassword(password)
         const doesUserExist = await checkIfUserExists(username);
@@ -86,33 +85,7 @@ class UserRepository {
         }
         return { message: "Account successfully created", status: 200 };
     }
-    async updateUsername(userId, newUsername) {
-        const response = await db.collection(this.collection).doc(userId).update({
-            username: newUsername
-        })
-        if (!response) {
-            return;
-        }
-        return response;
-    }
-    async updatePassword(userId, newPassword) {
-        const response = await db.collection(this.collection).doc(userId).update({
-            password: newPassword
-        })
-        if (!response) {
-            return;
-        }
-        return response;
-    }
-    async updateEmail(userId, newEmail) {
-        const response = await db.collection(this.collection).doc(userId).update({
-            email: newEmail
-        })
-        if (!response) {
-            return;
-        }
-        return response;
-    }
+    
     async deleteUser(userId) {
         const response = await db.collection(this.collection).doc(userId).delete();
         if (!response) {

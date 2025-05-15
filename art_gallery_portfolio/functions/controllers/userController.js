@@ -1,4 +1,4 @@
-const baseUserRepository = require("../repository/user");
+const baseUserRepository = require("../models/user");
 const baseUserInterface = baseUserRepository;
 const getAllUsers = async (req, res) => {
   try {

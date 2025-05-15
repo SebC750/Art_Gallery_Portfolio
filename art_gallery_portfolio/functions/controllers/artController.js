@@ -1,4 +1,4 @@
-const artRepository = require("../repository/art");
+const artRepository = require("../models/art");
 
 const getAllArtworks = async (res) => {
     try {
