@@ -3,25 +3,23 @@ import { createRoot } from 'react-dom/client'
 import Home from './Pages/Home.jsx'
 import Gallery from './Pages/Gallery.jsx'
 import About from './Pages/About.jsx'
+import Login from "./Pages/Login.jsx"
+import Navbar from "./Components/Navbar.jsx"
+import Footer from "./Components/Footer.jsx"
 import "./index.css"
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-const routes = createBrowserRouter([{
-  path: "/",
-  element: <Home />
-}, {
-  path: "/Gallery",
-  element: <Gallery />
-}, {
-  path: "/About",
-  element: <About />
-}])
-
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
-    <RouterProvider router={routes}/> 
-    
-  </StrictMode>,
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </StrictMode>
 )

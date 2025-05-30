@@ -1,0 +1,27 @@
+[
+    {
+        "src": "Artworks/bauhaus_saree.svg",
+        "active": true,
+        "alt": "Indian goth girl with a bauhaus themed saree."
+    },
+    {
+        "src": "Artworks/80s_Ankha.jpg",
+        "active": false,
+        "alt": "Drawing of ankha from animal crossing dressed in 80s clothing."
+    },
+    {
+        "src": "Artworks/BelaBeach.jpg",
+        "active": false,
+        "alt": "Two goths sitting together on a rock near the beach."
+    },
+    {
+        "src": "Artworks/froppy.jpg",
+        "active": false,
+        "alt": "Froppy from My Hero Academia playing the guitar with her tongue."
+    },
+    {
+        "src": "Artworks/Gaz_playing_loop.gif",
+        "active": false,
+        "alt": "Animation loop of Gaz from Invader Zim playing on her game slave in her room."
+    }
+]

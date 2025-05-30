@@ -1,17 +1,10 @@
-import artworks from "../artworks.json"
-import { useState, useEffect } from "react"
+import artworks from "../json/artworks.json"
+import { useState } from "react"
 import "../Styles/Gallery.css"
-import Navbar from "../Components/Navbar.jsx"
-import Footer from "../Components/Footer.jsx"
-import artworkAPI from "../api/artworkAPI.js"
-import commentApi from "../api/commentAPI.js"
-import userAPI from "../api/userAPI.js"
 import { sortByTitle, sortByDate } from "../Utilities/SortByFilter.js"
-/* 
-Gallery: This is the gallery page. It is where all of the artworks are shown to the user. For compactness and organization, I organized the artworks in rows of 3 images each.
-The gallery includes all of the artworks and a sort by option that allows you to sort the images by either title or the date they were first published on the internet. 
-The artwork and its metadata are formatted as a hero section.
-*/
+import GalleryList from "../Components/GalleryList.jsx"
+import ArtExhibit from "../Components/ArtExhibit.jsx"
+
 const Gallery = () => {
 
     const [allArtworks, setArtworks] = useState(artworks)
@@ -84,91 +77,34 @@ const Gallery = () => {
                 setArtworks(allArtworks)
             }
         }
-
     }
     return (
         <div>
-            <Navbar />
+
             <div id="Gallery">
                 <div className="container">
-                    <h2 className="text-info text-center p-3" id="top-of-gallery">
-                        Galleria
-                    </h2>
                     {errorMessage ? <div className="error-message"> {errorMessage} </div> : null}
-                    {!isArtworkSelected ? (
-                        <div>
-                            <div className="dropdown p-3 d-flex justify-content-center">
-                                <button type="button" className="btn btn-info btn-lg rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Sort by</button>
-                                <div className="dropdown-menu">
-                                    <ul>
-                                        <li className="dropdown-item" onClick={() => sortByFilter("title")}>
-                                            Title
-                                        </li>
-                                        <li className="dropdown-item" onClick={() => sortByFilter("date")}>
-                                            Year Completed
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {allArtworks && !errorMessage ? (
-                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                                    {allArtworks.map((val, index) => (
-                                        <div key={index} className="bg-transparent text-center p-4 text-info art-gallery-properties">
-
-                                            <div
-                                                style={{
-                                                    backgroundImage: `url(${val.file})`,
-                                                    backgroundSize: 'cover',
-                                                    backgroundPosition: 'center',
-                                                    width: '100%',
-                                                    height: '400px'
-                                                }}
-                                                onContextMenu={handleImgDownloadAttempt}
-                                                onDragStart={handleDragAttempt}
-
-                                                className="d-block w-100 img-fluid"
-
-                                                onClick={() => showSelectedArtwork(val.file, val.title, val.date, val.description)}
-                                            />
-                                            <h2 className="img-title"> {val.title}</h2>
-                                            <p>Date completed: {val.date}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : null}</div>) : (
-                        <div className="selected-artwork-container">
-                            <div className="row">
-                                <div className="col">
-                                    <img
-                                        src={allArtworks.file}
-                                        onContextMenu={handleImgDownloadAttempt}
-                                        onDragStart={handleDragAttempt}
-                                        alt="This is the selected artwork."
-                                        className="d-block w-100 img-fluid shadow"
-                                    />
-                                </div>
-                                <div className="col d-flex flex-column">
-                                    <div className="selected-artwork-description text-info flex-grow-1">
-                                        <span>{allArtworks.title}</span>
-                                        <p>Date completed: {allArtworks.date}</p>
-                                        <div className="description-container flex-grow-1 d-flex flex-column justify-content-start">
-                                            <div className="description-title bg-info">
-                                                <p>Description</p>
-                                            </div>
-                                            <div className="description-content">
-                                                <p> {allArtworks.description} </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" className="btn btn-outline-info btn-lg w-100 mt-auto" onClick={() => backToGallery()}> Back to Gallery</button>
-                                </div>
-                            </div>
-                        </div>
+                    {isArtworkSelected && allArtworks ? (
+                        <ArtExhibit
+                            allArtworks={allArtworks}
+                            backToGallery={backToGallery}
+                            handleImgDownloadAttempt={handleImgDownloadAttempt}
+                            handleDragAttempt={handleDragAttempt}
+                        />
+                    ) : (
+                        <GalleryList
+                            allArtworks={allArtworks}
+                            showSelectedArtwork={showSelectedArtwork}
+                            sortByFilter={sortByFilter}
+                            handleImgDownloadAttempt={handleImgDownloadAttempt}
+                            handleDragAttempt={handleDragAttempt}
+                            errorMessage={errorMessage}
+                        />
                     )}
-                    {!isArtworkSelected ? (<a href="#top-of-gallery"> <button type="button" className="btn btn-info w-100" id="back-to-top-btn" style={{ marginBottom: 20 }}> Back to top</button>  </a>) : null}
+                    {!isArtworkSelected && (<a href="#top-of-gallery" className="d-flex align-items-center justify-content-center link-dark link-offset-3"> <i className="bi bi-arrow-up"></i> Back to top </a>)}
                 </div>
             </div>
-            <Footer />
+
         </div >
     )
 }

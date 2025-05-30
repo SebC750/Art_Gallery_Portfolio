@@ -1,5 +1,4 @@
 .art-gallery-properties{
-    color: rgb(53, 195, 247);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -8,21 +7,17 @@
     
    
 }
-.art-gallery-properties h2 h4{
-    color: rgb(53, 195, 247);
-}
+
 .art-gallery-properties div{
-    
     cursor: pointer;
     width: 100%;
-    
     transition: all 0.3s ease;
 }
 .art-gallery-properties:hover div{
     padding: 10px;
     border-style: solid;
     border-radius: 5px;
-    border-color: rgb(53, 195, 247);
+    border-color: rgb(32, 32, 32);
     border-width: 4px;
 }
 .img-title{
@@ -79,7 +74,6 @@
     color: black;
     
 }
-
 
 .description-content{
     padding: 10px;

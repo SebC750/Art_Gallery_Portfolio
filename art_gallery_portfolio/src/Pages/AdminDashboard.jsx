@@ -24,7 +24,7 @@ const AdminDashboard = () =>{
                 <h1> Welcome home Sebastian!</h1>
                  
                 <div className="artwork-list">
-
+                    
                 </div>
          </div>
         )
